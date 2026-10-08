@@ -4,11 +4,12 @@ from google import genai
 import requests
 import tempfile 
 import base64
+import os
 
 app = Flask(__name__)
 CORS(app)
 
-client = genai.Client(api_key="")
+client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 PROMPTS = {
     "Summary": """
